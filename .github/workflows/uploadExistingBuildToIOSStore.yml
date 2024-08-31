@@ -1,0 +1,21 @@
+name: Build and Upload to IOS Store
+
+on: push
+
+# on:
+#   push:
+#     branches: 
+#       - "releases/**"
+
+jobs:
+  build:
+    if: ${{ contains(github.event.head_commit.message,'[temp]') || contains(github.event.head_commit.message,'[temp ios]') }}
+    runs-on: macos-13
+    steps:
+      - name: 'Upload app to TestFlight'
+        uses: apple-actions/upload-testflight-build@v1
+        with: 
+          app-path: ${{ github.workspace }}/builds/app-release.ipa
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
