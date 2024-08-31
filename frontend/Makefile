@@ -7,7 +7,7 @@ install:
 android:
 	./$(F_SETUP)/$(F_ANDROIDSTUDIO)/android-studio/bin/studio.sh
 
-start:
+start: 
 	npm install
 	npx expo start --go
 
