@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-13
     steps:
       - name: "cd"
-        run: cd .. && pwd
+        run: cd .. && pwd && ls -la
       - name: "get directory"
         run: pwd
       - name: "print current"
