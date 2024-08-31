@@ -12,6 +12,8 @@ jobs:
     if: ${{ contains(github.event.head_commit.message,'[temp]') || contains(github.event.head_commit.message,'[temp ios]') }}
     runs-on: macos-13
     steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
       - name: "cd"
         run: cd .. && pwd && ls -la
       - name: "get directory"
