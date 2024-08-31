@@ -9,7 +9,7 @@ android:
 
 start: 
 	npm install
-	npx expo start --go
+	npx expo start --go 
 
 tstart:
 	npx expo start --tunnel
