@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-13
     steps:
       - name: "get directory"
-        run: echo "pwd"
+        run: pwd
       - name: 'Upload app to TestFlight'
         uses: apple-actions/upload-testflight-build@v1
         with: 
