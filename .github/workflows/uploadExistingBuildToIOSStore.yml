@@ -14,16 +14,16 @@ jobs:
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
-      - name: "cd"
-        run: cd .. && pwd && ls -la
-      - name: "get directory"
-        run: pwd
-      - name: "print current"
-        run: ls -la
+      # - name: "cd"
+      #   run: cd .. && pwd && ls -la
+      # - name: "get directory"
+      #   run: pwd
+      # - name: "print current"
+      #   run: ls -la
       - name: 'Upload app to TestFlight'
         uses: apple-actions/upload-testflight-build@v1
         with: 
-          app-path: ${{ github.workspace }}/frontend/builds/app-release.ipa
+          app-path: ${{ github.workspace }}/builds/app-release.ipa
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
