@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 5.4.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+  // building apks and simulated ios builds
+    "preview": {
+      "env": {
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "distribution": "internal"
+        //"simulator": true
+      }
+    },
+// builds specifically to upload to the app stores
+    "production": {
+      "autoIncrement": true,
+      "env": {
+      },
+      "android": {
+      },
+      "ios": {
+        "distribution": "store",
+        "releaseChannel": "default"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
