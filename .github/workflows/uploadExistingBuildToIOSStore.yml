@@ -12,6 +12,8 @@ jobs:
     if: ${{ contains(github.event.head_commit.message,'[temp]') || contains(github.event.head_commit.message,'[temp ios]') }}
     runs-on: macos-13
     steps:
+      - name: "cd"
+        run: cd ".."
       - name: "get directory"
         run: pwd
       - name: "print current"
