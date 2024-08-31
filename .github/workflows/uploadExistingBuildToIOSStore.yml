@@ -12,6 +12,8 @@ jobs:
     if: ${{ contains(github.event.head_commit.message,'[temp]') || contains(github.event.head_commit.message,'[temp ios]') }}
     runs-on: macos-13
     steps:
+      - name: "get directory"
+        run: echo "pwd"
       - name: 'Upload app to TestFlight'
         uses: apple-actions/upload-testflight-build@v1
         with: 
