@@ -1,18 +1,14 @@
 import { registerRootComponent } from 'expo';
 import { Text, View } from "react-native";
+import {NavigationContainer} from '@react-navigation/native';
+import {AppStack} from './components/navigation/AppStack'
+
 
 function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: 'green',
-      }}
-    >
-      <Text style={{}}>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <NavigationContainer>
+      <AppStack/>
+    </NavigationContainer>
   );
 }
 
